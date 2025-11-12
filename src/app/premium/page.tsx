@@ -39,7 +39,7 @@ const plans: PricingPlan[] = [
     price: "9,99€",
     period: "por mês",
     description: "Ideal para experimentar todas as funcionalidades",
-    color: "emerald",
+    color: "blue",
     popular: true,
     features: [
       "Tudo do plano Gratuito",
@@ -59,7 +59,7 @@ const plans: PricingPlan[] = [
     price: "79,99€",
     period: "por ano",
     description: "Melhor valor - poupe 33%",
-    color: "teal",
+    color: "cyan",
     features: [
       "Tudo do plano Premium Mensal",
       "2 meses grátis (equivalente a 9,99€/mês)",
@@ -86,9 +86,9 @@ export default function PremiumPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
@@ -97,7 +97,7 @@ export default function PremiumPage() {
                 Voltar
               </Button>
             </Link>
-            <h1 className="text-2xl font-bold text-gray-900">Premium</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Premium</h1>
             <div className="w-24"></div>
           </div>
         </div>
@@ -105,14 +105,14 @@ export default function PremiumPage() {
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-2 rounded-full mb-6">
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-4 py-2 rounded-full mb-6">
           <Sparkles className="w-4 h-4" />
           <span className="text-sm font-medium">Desbloqueie todo o potencial</span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           Escolha o Plano Perfeito para Si
         </h2>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Alcance os seus objetivos de saúde com ferramentas profissionais e suporte dedicado
         </p>
       </section>
@@ -125,13 +125,13 @@ export default function PremiumPage() {
               key={plan.id}
               className={`relative shadow-lg hover:shadow-2xl transition-all duration-300 ${
                 plan.popular
-                  ? "border-4 border-emerald-500 scale-105 md:scale-110"
-                  : "border-2 border-gray-200"
+                  ? "border-4 border-blue-500 dark:border-blue-400 scale-105 md:scale-110"
+                  : "border-2 border-gray-200 dark:border-gray-700"
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-1">
+                  <div className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-1">
                     <Crown className="w-4 h-4" />
                     Mais Popular
                   </div>
@@ -147,21 +147,21 @@ export default function PremiumPage() {
                   {plan.id === "yearly" && <Crown className="w-8 h-8 text-white" />}
                 </div>
                 <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                <CardDescription className="text-gray-600 mb-4">{plan.description}</CardDescription>
+                <CardDescription className="text-gray-600 dark:text-gray-400 mb-4">{plan.description}</CardDescription>
                 <div className="mb-2">
-                  <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
+                  <span className="text-5xl font-bold text-gray-900 dark:text-white">{plan.price}</span>
                 </div>
-                <div className="text-sm text-gray-500">{plan.period}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">{plan.period}</div>
               </CardHeader>
 
               <CardContent className="space-y-6">
                 <ul className="space-y-3">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center mt-0.5">
-                        <Check className="w-3 h-3 text-emerald-600" />
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mt-0.5">
+                        <Check className="w-3 h-3 text-blue-600 dark:text-blue-400" />
                       </div>
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -170,8 +170,8 @@ export default function PremiumPage() {
                   onClick={() => handlePayment(plan.id)}
                   className={`w-full ${
                     plan.popular
-                      ? "bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700"
-                      : "bg-gray-900 hover:bg-gray-800"
+                      ? "bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700"
+                      : "bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600"
                   } shadow-lg`}
                   disabled={plan.id === "free"}
                 >
@@ -185,12 +185,12 @@ export default function PremiumPage() {
 
       {/* Benefits Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
+        <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Porquê Escolher o CaloriaPT Premium?
+              Porquê Escolher o CalPT Premium?
             </h3>
-            <p className="text-emerald-50 text-lg max-w-2xl mx-auto">
+            <p className="text-blue-50 text-lg max-w-2xl mx-auto">
               Mais de 100.000 utilizadores já alcançaram os seus objetivos connosco
             </p>
           </div>
@@ -201,7 +201,7 @@ export default function PremiumPage() {
                 <TrendingUp className="w-8 h-8" />
               </div>
               <h4 className="text-xl font-bold mb-2">Resultados Comprovados</h4>
-              <p className="text-emerald-50">
+              <p className="text-blue-50">
                 Utilizadores Premium perdem em média 2x mais peso que utilizadores gratuitos
               </p>
             </div>
@@ -211,7 +211,7 @@ export default function PremiumPage() {
                 <Calendar className="w-8 h-8" />
               </div>
               <h4 className="text-xl font-bold mb-2">Acompanhamento Contínuo</h4>
-              <p className="text-emerald-50">
+              <p className="text-blue-50">
                 Relatórios semanais e mensais para acompanhar o seu progresso
               </p>
             </div>
@@ -221,7 +221,7 @@ export default function PremiumPage() {
                 <Sparkles className="w-8 h-8" />
               </div>
               <h4 className="text-xl font-bold mb-2">Suporte Dedicado</h4>
-              <p className="text-emerald-50">
+              <p className="text-blue-50">
                 Equipa de nutricionistas e especialistas disponível para ajudar
               </p>
             </div>
@@ -231,7 +231,7 @@ export default function PremiumPage() {
 
       {/* FAQ Section */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
+        <h3 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
           Perguntas Frequentes
         </h3>
         <div className="space-y-4">
@@ -240,7 +240,7 @@ export default function PremiumPage() {
               <CardTitle className="text-lg">Posso cancelar a qualquer momento?</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Sim! Pode cancelar a sua subscrição a qualquer momento sem custos adicionais. O
                 acesso Premium continuará até ao final do período pago.
               </p>
@@ -252,7 +252,7 @@ export default function PremiumPage() {
               <CardTitle className="text-lg">Que métodos de pagamento aceitam?</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Aceitamos cartões de crédito/débito, MB Way, PayPal e transferência bancária.
               </p>
             </CardContent>
@@ -263,7 +263,7 @@ export default function PremiumPage() {
               <CardTitle className="text-lg">Existe período de teste gratuito?</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 Sim! Oferecemos 7 dias de teste gratuito do Premium para novos utilizadores.
               </p>
             </CardContent>

@@ -94,9 +94,9 @@ export default function PerfilPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
@@ -105,7 +105,7 @@ export default function PerfilPage() {
                 Voltar
               </Button>
             </Link>
-            <h1 className="text-2xl font-bold text-gray-900">Perfil</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Perfil</h1>
             <div className="w-24"></div>
           </div>
         </div>
@@ -115,10 +115,10 @@ export default function PerfilPage() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="space-y-6">
           {/* Informações Pessoais */}
-          <Card className="shadow-lg border-2 border-emerald-100">
+          <Card className="shadow-lg border-2 border-blue-100 dark:border-blue-900">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <User className="w-5 h-5 text-emerald-600" />
+                <User className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 Informações Pessoais
               </CardTitle>
               <CardDescription>
@@ -186,10 +186,10 @@ export default function PerfilPage() {
           </Card>
 
           {/* Dados Físicos */}
-          <Card className="shadow-lg border-2 border-teal-100">
+          <Card className="shadow-lg border-2 border-cyan-100 dark:border-cyan-900">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Activity className="w-5 h-5 text-teal-600" />
+                <Activity className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
                 Dados Físicos
               </CardTitle>
               <CardDescription>
@@ -234,10 +234,10 @@ export default function PerfilPage() {
           </Card>
 
           {/* Objetivos e Atividade */}
-          <Card className="shadow-lg border-2 border-blue-100">
+          <Card className="shadow-lg border-2 border-blue-100 dark:border-blue-900">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Target className="w-5 h-5 text-blue-600" />
+                <Target className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 Objetivos e Atividade
               </CardTitle>
               <CardDescription>
@@ -293,14 +293,14 @@ export default function PerfilPage() {
           {/* Botão Guardar */}
           <div className="flex justify-end gap-4">
             {isSaved && (
-              <div className="flex items-center gap-2 text-emerald-600 font-medium">
-                <div className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium">
+                <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full animate-pulse"></div>
                 Perfil guardado com sucesso!
               </div>
             )}
             <Button
               onClick={handleSave}
-              className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-lg px-8"
+              className="bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 shadow-lg px-8"
             >
               <Save className="w-4 h-4 mr-2" />
               Guardar Perfil
